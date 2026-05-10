@@ -1,0 +1,43 @@
+%sql
+
+USE CATALOG lending360new;
+USE SCHEMA bronze;
+
+CREATE TABLE repayments (
+  repayment_id BIGINT,
+  loan_id STRING,
+  borrower_id STRING,
+  payment_date DATE,
+  amount_paid DOUBLE ,
+  status STRING,
+  payment_mode STRING,
+  late_fee DOUBLE ,
+  missed_flag BOOLEAN,
+  emi_number INT,
+  remarks STRING,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
+  branch_id STRING,
+  officer_id STRING,
+  currency STRING,
+  exchange_rate DOUBLE ,
+  amount_in_inr DOUBLE ,
+  fiscal_year STRING,
+  quarter STRING
+);
+
+INSERT INTO repayments (
+  repayment_id, loan_id, borrower_id, payment_date, amount_paid, status, payment_mode, late_fee, missed_flag,
+  emi_number, remarks, created_at, updated_at, branch_id, officer_id, currency, exchange_rate,
+  amount_in_inr, fiscal_year, quarter
+) VALUES
+(1, 'L1001', 'B1001', '2025-08-05', 10000.00, 'Paid', 'Online', 0.00, false, 1, 'On time', '2025-08-05 10:00:00', '2025-08-05 10:00:00', 'BR101', 'O101', 'USD', 83.2, 832000.00, '2025-26', 'Q2'),
+(2, 'L1002', 'B1002', '2025-08-06', 9500.00, 'Paid', 'Cheque', 0.00, false, 2, 'Cleared', '2025-08-06 11:00:00', '2025-08-06 11:00:00', 'BR102', 'O102', 'INR', 1.0, 9500.00, '2025-26', 'Q2'),
+(3, 'L1003', 'B1003', '2025-08-07', 12000.00, 'Missed', 'Online', 500.00, true, 3, 'Delayed', '2025-08-07 12:00:00', '2025-08-07 12:00:00', 'BR103', 'O103', 'USD', 83.2, 998400.00, '2025-26', 'Q2'),
+(4, 'L1004', 'B1004', '2025-08-08', 8000.00, 'Paid', 'Cash', 0.00, false, 4, 'On time', '2025-08-08 13:00:00', '2025-08-08 13:00:00', 'BR104', 'O104', 'INR', 1.0, 8000.00, '2025-26', 'Q2'),
+(5, 'L1005', 'B1005', '2025-08-09', 15000.00, 'Paid', 'Online', 0.00, false, 5, 'Processed', '2025-08-09 14:00:00', '2025-08-09 14:00:00', 'BR105', 'O105', 'USD', 83.2, 1248000.00, '2025-26', 'Q2'),
+(6, 'L1006', 'B1006', '2025-08-10', 11000.00, 'Paid', 'Cheque', 0.00, false, 6, 'Cleared', '2025-08-10 15:00:00', '2025-08-10 15:00:00', 'BR106', 'O106', 'INR', 1.0, 11000.00, '2025-26', 'Q2'),
+(7, 'L1007', 'B1007', '2025-08-11', 9500.00, 'Missed', 'Online', 300.00, true, 7, 'Late fee applied', '2025-08-11 16:00:00', '2025-08-11 16:00:00', 'BR107', 'O107', 'USD', 83.2, 790400.00, '2025-26', 'Q2'),
+(8, 'L1008', 'B1008', '2025-08-12', 13000.00, 'Paid', 'Cash', 0.00, false, 8, 'On time', '2025-08-12 17:00:00', '2025-08-12 17:00:00', 'BR108', 'O108', 'INR', 1.0, 13000.00, '2025-26', 'Q2'),
+(9, 'L1009', 'B1009', '2025-08-13', 10500.00, 'Paid', 'Online', 0.00, false, 9, 'Processed', '2025-08-13 18:00:00', '2025-08-13 18:00:00', 'BR109', 'O109', 'USD', 83.2, 873600.00, '2025-26', 'Q2'),
+(10, 'L1010', 'B1010', '2025-08-14', 9800.00, 'Paid', 'Cheque', 0.00, false, 10, 'Cleared', '2025-08-14 19:00:00', '2025-08-14 19:00:00', 'BR110', 'O110', 'INR', 1.0, 9800.00, '2025-26', 'Q2');

@@ -1,0 +1,38 @@
+%sql
+USE CATALOG lending360new;
+USE SCHEMA bronze;
+
+CREATE TABLE borrower_profile (
+  borrower_id STRING,
+  full_name STRING,
+  gender STRING,
+  age INT,
+  location STRING,
+  marital_status STRING,
+  employment_type STRING,
+  income DOUBLE,
+  industry_code STRING,
+  sector STRING,
+  credit_score INT,
+  default_flag BOOLEAN,
+  fraud_flag BOOLEAN,
+  total_exposure DOUBLE,
+  loan_count INT,
+  avg_interest_rate DOUBLE,
+  purpose_tag STRING,
+  risk_score INT,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+INSERT INTO borrower_profile VALUES
+('B1001', 'Ravi Kumar', 'Male', 42, 'Mumbai', 'Married', 'Salaried', 1200000, '6201', 'Information Technology', 720, false, false, 500000, 1, 6.5, 'Machinery', 1, '2025-08-01 10:00:00', '2025-08-01 10:00:00'),
+('B1002', 'Neha Sharma', 'Female', 35, 'Pune', 'Single', 'Self-Employed', 950000, '4100', 'Logistics', 680, false, false, 750000, 1, 7.2, 'Expansion', 2, '2025-08-01 10:05:00', '2025-08-01 10:05:00'),
+('B1003', 'Amit Joshi', 'Male', 50, 'Delhi', 'Married', 'Salaried', 1500000, '1100', 'Manufacturing', 750, false, false, 1200000, 2, 6.0, 'Infrastructure', 1, '2025-08-01 10:10:00', '2025-08-01 10:10:00'),
+('B1004', 'Sunita Rao', 'Female', 29, 'Chennai', 'Single', 'Self-Employed', 800000, '6201', 'Information Technology', 640, true, true, 300000, 1, 8.0, 'Furniture', 3, '2025-08-01 10:15:00', '2025-08-01 10:15:00'),
+('B1005', 'Manoj Patil', 'Male', 45, 'Hyderabad', 'Married', 'Salaried', 1300000, '2100', 'Construction', 710, false, false, 950000, 1, 7.0, 'Acquisition', 2, '2025-08-01 10:20:00', '2025-08-01 10:20:00'),
+('B1006', 'Priya Desai', 'Female', 38, 'Ahmedabad', 'Married', 'Salaried', 1100000, '5100', 'Retail', 690, false, false, 650000, 1, 6.7, 'Payroll', 2, '2025-08-01 10:25:00', '2025-08-01 10:25:00'),
+('B1007', 'Rakesh Mehta', 'Male', 41, 'Kolkata', 'Married', 'Self-Employed', 1000000, '6201', 'Information Technology', 730, false, false, 400000, 1, 6.2, 'Machinery', 1, '2025-08-01 10:30:00', '2025-08-01 10:30:00'),
+('B1008', 'Anjali Verma', 'Female', 33, 'Bangalore', 'Single', 'Salaried', 1250000, '3100', 'Real Estate', 760, false, false, 850000, 1, 6.9, 'Infrastructure', 1, '2025-08-01 10:35:00', '2025-08-01 10:35:00'),
+('B1009', 'Suresh Nair', 'Male', 47, 'Jaipur', 'Married', 'Salaried', 900000, '4100', 'Logistics', 670, true, true, 550000, 1, 7.1, 'Logistics', 2, '2025-08-01 10:40:00', '2025-08-01 10:40:00'),
+('B1010', 'Meena Iyer', 'Female', 36, 'Nagpur', 'Single', 'Self-Employed', 850000, '1100', 'Manufacturing', 745, false, false, 1000000, 1, 6.4, 'Equipment', 1, '2025-08-01 10:45:00', '2025-08-01 10:45:00');
