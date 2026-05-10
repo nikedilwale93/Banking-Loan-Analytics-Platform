@@ -1,0 +1,67 @@
+%sql
+USE CATALOG lending360new;
+USE SCHEMA bronze;
+
+CREATE TABLE loan_officers (
+  officer_id STRING PRIMARY KEY,
+  full_name STRING,
+  department STRING,
+  designation STRING,
+  branch_id STRING,
+  joining_date DATE,
+  experience_years INT,
+  active_flag BOOLEAN,
+  email STRING,
+  phone STRING,
+  region STRING,
+  total_loans INT,
+  avg_loan_size DOUBLE ,
+  compliance_score DOUBLE ,
+  last_review_date DATE,
+  review_rating STRING,
+  fraud_cases INT,
+  resolved_cases INT,
+  escalation_flag BOOLEAN,
+  remarks STRING
+);
+
+INSERT INTO loan_officers VALUES
+('O102', 'Alice Smith', 'Loan', 'Senior Officer', 'BR102', '2019-03-15', 5, true,
+ 'alice.smith@example.com', '9123456780', 'South', 80, 3500000.00, 90.5,
+ '2023-02-10', 'Very Good', 1, 1, false, 'Consistent performer'),
+
+('O103', 'Robert Brown', 'Loan', 'Officer', 'BR103', '2020-06-20', 3, true,
+ 'robert.brown@example.com', '9234567810', 'East', 60, 2500000.00, 88.0,
+ '2023-03-05', 'Good', 2, 2, false, 'Needs improvement'),
+
+('O104', 'Emily Davis', 'Loan', 'Manager', 'BR104', '2017-09-10', 8, true,
+ 'emily.davis@example.com', '9345678123', 'West', 120, 6000000.00, 96.5,
+ '2023-01-20', 'Excellent', 0, 0, false, 'Top performer'),
+
+('O105', 'Michael Johnson', 'Loan', 'Officer', 'BR105', '2021-01-25', 2, true,
+ 'michael.johnson@example.com', '9456781234', 'North', 40, 1500000.00, 85.0,
+ '2023-04-01', 'Average', 3, 2, true, 'Requires monitoring'),
+
+('O106', 'Sophia Lee', 'Loan', 'Senior Officer', 'BR106', '2018-11-11', 6, true,
+ 'sophia.lee@example.com', '9567812345', 'South', 90, 4200000.00, 92.3,
+ '2023-02-18', 'Very Good', 1, 1, false, 'Reliable'),
+
+('O107', 'David Wilson', 'Loan', 'Officer', 'BR107', '2022-02-14', 1, true,
+ 'david.wilson@example.com', '9678123456', 'East', 30, 1200000.00, 80.0,
+ '2023-05-01', 'Average', 4, 3, true, 'Under training'),
+
+('O108', 'Olivia Martinez', 'Loan', 'Manager', 'BR108', '2016-07-07', 9, true,
+ 'olivia.martinez@example.com', '9781234567', 'West', 150, 7000000.00, 97.8,
+ '2023-01-05', 'Excellent', 0, 0, false, 'Outstanding'),
+
+('O109', 'James Anderson', 'Loan', 'Senior Officer', 'BR109', '2019-12-01', 4, true,
+ 'james.anderson@example.com', '9892345678', 'North', 70, 3000000.00, 89.5,
+ '2023-03-22', 'Good', 2, 2, false, 'Stable performance'),
+
+('O110', 'Isabella Thomas', 'Loan', 'Officer', 'BR110', '2020-08-18', 3, true,
+ 'isabella.thomas@example.com', '9903456789', 'South', 55, 2000000.00, 87.2,
+ '2023-04-10', 'Good', 1, 1, false, 'Improving'),
+
+('O111', 'William Taylor', 'Loan', 'Manager', 'BR111', '2015-05-30', 10, true,
+ 'william.taylor@example.com', '9014567890', 'East', 180, 8000000.00, 98.5,
+ '2023-01-12', 'Excellent', 0, 0, false, 'Highly experienced');

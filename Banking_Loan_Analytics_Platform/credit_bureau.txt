@@ -1,0 +1,41 @@
+%sql
+USE CATALOG lending360new;
+USE SCHEMA bronze;
+CREATE TABLE credit_bureau (
+  bureau_id BIGINT,
+  borrower_id STRING,
+  credit_score INT,
+  score_date DATE,
+  score_band STRING,
+  default_flag BOOLEAN,
+  last_default_date DATE,
+  total_defaults INT,
+  inquiries INT,
+  active_loans INT,
+  closed_loans INT,
+  avg_utilization DOUBLE,
+  max_utilization DOUBLE,
+  bureau_name STRING,
+  rating_agency STRING,
+  risk_grade STRING,
+  remarks STRING,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+INSERT INTO credit_bureau (
+  bureau_id, borrower_id, credit_score, score_date, score_band, default_flag, last_default_date,
+  total_defaults, inquiries, active_loans, closed_loans, avg_utilization, max_utilization,
+  bureau_name, rating_agency, risk_grade, remarks, created_at, updated_at
+) VALUES
+(1, 'B1001', 720, '2025-08-01', 'Excellent', false, NULL, 0, 2, 3, 5, 35.5, 60.0, 'CIBIL', 'CRISIL', 'A', 'Stable borrower', '2025-08-01 10:00:00', '2025-08-01 10:00:00'),
+(2, 'B1002', 680, '2025-08-01', 'Good', false, NULL, 1, 3, 2, 4, 42.0, 70.0, 'Experian', 'ICRA', 'B', 'Moderate risk', '2025-08-01 10:05:00', '2025-08-01 10:05:00'),
+(3, 'B1003', 750, '2025-08-01', 'Excellent', false, NULL, 0, 1, 4, 6, 28.0, 55.0, 'Equifax', 'CARE', 'A', 'Low exposure', '2025-08-01 10:10:00', '2025-08-01 10:10:00'),
+(4, 'B1004', 640, '2025-08-01', 'Fair', true, '2024-12-15', 2, 5, 1, 3, 65.0, 85.0, 'CIBIL', 'CRISIL', 'C', 'Recent default', '2025-08-01 10:15:00', '2025-08-01 10:15:00'),
+(5, 'B1005', 710, '2025-08-01', 'Good', false, NULL, 0, 2, 3, 4, 38.0, 62.0, 'Experian', 'ICRA', 'B', 'Consistent payments', '2025-08-01 10:20:00', '2025-08-01 10:20:00'),
+(6, 'B1006', 690, '2025-08-01', 'Good', false, NULL, 1, 4, 2, 3, 45.0, 68.0, 'Equifax', 'CARE', 'B', 'Improving trend', '2025-08-01 10:25:00', '2025-08-01 10:25:00'),
+(7, 'B1007', 730, '2025-08-01', 'Very Good', false, NULL, 0, 1, 3, 5, 30.0, 50.0, 'CIBIL', 'CRISIL', 'A', 'Strong repayment history', '2025-08-01 10:30:00', '2025-08-01 10:30:00'),
+(8, 'B1008', 760, '2025-08-01', 'Excellent', false, NULL, 0, 2, 4, 6, 25.0, 48.0, 'Experian', 'ICRA', 'A', 'Top-tier borrower', '2025-08-01 10:35:00', '2025-08-01 10:35:00'),
+(9, 'B1009', 670, '2025-08-01', 'Fair', true, '2025-03-10', 3, 6, 2, 2, 70.0, 90.0, 'Equifax', 'CARE', 'C', 'Multiple defaults', '2025-08-01 10:40:00', '2025-08-01 10:40:00'),
+(10, 'B1010', 745, '2025-08-01', 'Very Good', false, NULL, 0, 2, 3, 4, 32.0, 58.0, 'CIBIL', 'CRISIL', 'A', 'Reliable client', '2025-08-01 10:45:00', '2025-08-01 10:45:00');
+
